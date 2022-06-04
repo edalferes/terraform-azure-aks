@@ -13,9 +13,6 @@ data "azurerm_subnet" "subnet" {
   resource_group_name  = var.netwok_resource_group
 }
 
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group
-}
 
 resource "tls_private_key" "pair" {
   algorithm = "RSA"

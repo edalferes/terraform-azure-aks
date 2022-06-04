@@ -79,7 +79,7 @@ variable "end_date" {
 variable "k8s_version" {
   description = "(Optional) Version of Kubernetes specified when creating the AKS managed cluster. If not specified, the latest recommended version will be used at provisioning time (but won't auto-upgrade)."
   type        = string
-  default     = "1.17.11"
+  default     = "1.23.5"
 }
 
 variable "rbac_enabled" {
@@ -156,4 +156,10 @@ variable "storage_account_kind" {
   description = "(Optional) Defines the Kind of account. Valid options are BlobStorage, BlockBlobStorage, FileStorage, Storage and StorageV2. Changing this forces a new resource to be created. Defaults to StorageV2."
   type        = string
   default     = "FileStorage"
+}
+
+variable "sku_tier" {
+  description = "(Optional) Defines the SLA plan for the availability of system. Valid options are Free or Paid, paid option enables the Uptime SLA feature (see https://docs.microsoft.com/en-us/azure/aks/uptime-sla for more info)"
+  type        = string
+  default     = "Free"
 }

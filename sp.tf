@@ -1,6 +1,5 @@
 resource "azuread_application" "sp" {
-  display_name               = local.sp_name
-  identifier_uris            = ["http://${local.sp_name}"]
+  display_name = local.sp_name
   available_to_other_tenants = false
   oauth2_allow_implicit_flow = false
 }
@@ -21,8 +20,8 @@ resource "random_string" "unique" {
 
 resource "azuread_service_principal_password" "sp" {
   service_principal_id = azuread_service_principal.sp.id
-  value                = random_string.unique.result
-  end_date             = var.end_date
+  value = random_string.unique.result
+  end_date = var.end_date
 }
 
 resource "azurerm_role_assignment" "role_assignment_network" {
