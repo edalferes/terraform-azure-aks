@@ -16,7 +16,7 @@ variable "admin_username" {
 
 variable "k8s_version" {
   description = "Version of Kubernetes specified when creating the AKS managed cluster."
-  default     = "1.23.5"
+  default     = "1.22.11"
 }
 
 variable "default_node_vm_size" {
